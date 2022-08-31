@@ -1,6 +1,10 @@
 import { Recipe } from './recipe.model';
 
+import { EventEmitter } from '@angular/core';
+
 export class RecipeService{
+
+  selectedRecipeInService = new EventEmitter<Recipe>();
 
   private recipes: Recipe[] = [
     new Recipe('Noodles', 'This is simply a test-1', 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'),
@@ -15,7 +19,7 @@ export class RecipeService{
   ];
 
   getRecipes(){
-      return this.recipes.slice(); //This will return a copy of this array. 
+      return this.recipes.slice(); //This will return a copy of this array.
   }
 
 }
