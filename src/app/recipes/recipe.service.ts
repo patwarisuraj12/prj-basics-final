@@ -1,20 +1,25 @@
 import { Recipe } from './recipe.model';
-
 import { EventEmitter } from '@angular/core';
+import { Ingredient } from '../shared/ingredient.model';
 
 export class RecipeService{
 
   selectedRecipeInService = new EventEmitter<Recipe>();
 
   private recipes: Recipe[] = [
-    new Recipe('Noodles', 'This is simply a test-1', 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'),
-    new Recipe('Pan Cake', 'This is simply a test-2', 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'),
-    new Recipe('Lasagne', 'This is simply a test-3', 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'),
-    new Recipe('Veg Sandwich', 'This is simply a test-4', 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'),
-    new Recipe('Burgar', 'This is simply a test-5', 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'),
-    new Recipe('Potato Fries', 'This is simply a test-6', 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'),
-    new Recipe('Momos', 'This is simply a test-7', 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'),
-    new Recipe('Pizza', 'This is simply a test-8', 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'),
+    new Recipe('Tasty Schnitzel',
+               'A super tasty Schnitzel, just awesome!',
+               'https://upload.wikimedia.org/wikipedia/commons/7/72/Schnitzel.JPG',
+                [
+                 new Ingredient('Potato',1),
+                 new Ingredient('Buns',2)
+                ]),
+    new Recipe('Potato Fries',
+               'Yummy fries! healty and easy cooking.',
+               'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
+               [
+                 new Ingredient('Potato',1),
+               ])
 
   ];
 
